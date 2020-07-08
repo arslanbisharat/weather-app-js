@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   Clouds: 'hsla(170, 39.2%, 52.2%, 0.5)',
   Snow: 'hsla(288, 39.2%, 77.2%, 0.7)',
   Rain: 'hsla(197, 75%, 25%, 0.7)',
@@ -8,4 +8,3 @@ const colors = {
   Drizzle: 'hsla(198.3, 39.2%, 52%, 0.7)',
   Sand: 'hsla(360, 39.2%, 52%, 0.7)',
 };
-export default colors
