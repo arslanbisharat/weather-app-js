@@ -1,6 +1,6 @@
 const isoCountries = {
-  AF: "Afghanistan",
-  AX: "Aland Islands",
+  AF: 'Afghanistan',
+  AX: 'Aland Islands',
   AL: "Albania",
   DZ: "Algeria",
   AS: "American Samoa",
