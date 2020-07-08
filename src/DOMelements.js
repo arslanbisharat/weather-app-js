@@ -11,14 +11,14 @@ button.addEventListener('click', () => {
   const infoArray = searchQuery.split(',');
   const nameOfCity = infoArray[0];
   // city name without the space in front of the name
-  let nameOfCountry = infoArray[infoArray.length - 1].replace(' ', ' ');
-  let countryCode = getCountryCode(nameOfCountry);
-  let query = `${nameOfCity},${countryCode}`;
+  const nameOfCountry = infoArray[infoArray.length - 1].replace(' ', ' ');
+  const countryCode = getCountryCode(nameOfCountry);
+  const query = `${nameOfCity},${countryCode}`;
 
-  let units = getUnit();
+  const units = getUnit();
 
   //clear search
-  document.querySelector("#cityNameInput").value = "";
+  document.querySelector('#cityNameInput').value = '';
   // fetches the weather data
   fetchWeatherAsync(query, units);
   // fetches the city photo
@@ -27,13 +27,13 @@ button.addEventListener('click', () => {
 });
 
 // celcius
-let metricButton = document.querySelector(".metric");
+const metricButton = document.querySelector('.metric');
 // fahrenheit
-let imperialButton = document.querySelector(".imperial");
-let unitsButtons = [metricButton, imperialButton];
+const imperialButton = document.querySelector('.imperial');
+const unitsButtons = [metricButton, imperialButton];
 
 const getUnit = () => {
-  let units = unitsButtons.filter((input) => {
+  const units = unitsButtons.filter((input) => {
     if (input.checked) {
       return input;
     }
