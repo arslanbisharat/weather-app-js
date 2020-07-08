@@ -1,17 +1,17 @@
-import { fetchWeatherAsync, fetchFlickrPhoto, toggleLoader } from "./index";
-import { getCountryCode } from "./countryCode";
+import { fetchWeatherAsync, fetchFlickrPhoto, toggleLoader } from './index';
+import { getCountryCode } from './countryCode';
 // search button and array of divs with data
-let button = document.querySelector("#citySearchButton");
-export let dataDivs = [...document.querySelectorAll(".data")];
+let button = document.querySelector('#citySearchButton');
+export let dataDivs = [...document.querySelectorAll('.data')];
 
 // adds search button event handler
-button.addEventListener("click", () => {
+button.addEventListener('click', () => {
   toggleLoader();
-  let searchQuery = document.querySelector("#cityNameInput").value;
-  let infoArray = searchQuery.split(",");
-  let nameOfCity = infoArray[0];
+  const searchQuery = document.querySelector('#cityNameInput').value;
+  const infoArray = searchQuery.split(',');
+  const nameOfCity = infoArray[0];
   // city name without the space in front of the name
-  let nameOfCountry = infoArray[infoArray.length - 1].replace(" ", "");
+  let nameOfCountry = infoArray[infoArray.length - 1].replace(' ', ' ');
   let countryCode = getCountryCode(nameOfCountry);
   let query = `${nameOfCity},${countryCode}`;
 
