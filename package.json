@@ -1,0 +1,24 @@
+{
+  "name": "weather-app-js",
+  "version": "1.0.0",
+  "description": "This is the 5th project of the Main Javascript curriculum at [Microverse](https://www.microverse.org/) - @microverseinc",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arslanbisharat/weather-app-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arslanbisharat/weather-app-js/issues"
+  },
+  "homepage": "https://github.com/arslanbisharat/weather-app-js#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
