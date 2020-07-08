@@ -32,7 +32,7 @@ let metricButton = document.querySelector(".metric");
 let imperialButton = document.querySelector(".imperial");
 let unitsButtons = [metricButton, imperialButton];
 
-function getUnit() {
+const getUnit = () => {
   let units = unitsButtons.filter((input) => {
     if (input.checked) {
       return input;
