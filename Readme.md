@@ -25,7 +25,7 @@ and a chance to build another small project from start to finish without the use
 1. This is best viewed on mobile devices as a fully responsive layout has not been implemented yet.
 
 ## Live Link
-[Click Here]()
+[Click Here](https://rawcdn.githack.com/arslanbisharat/weather-app-js/905c2ff657433925ba4ad712fb269bbb4e50a15e/dist/index.html)
 
 ## Getting Started
 
