@@ -1,5 +1,5 @@
-import { fetchWeatherAsync, fetchFlickrPhoto, toggleLoader } from "./index.js";
-import { getCountryCode } from "./countryCode.js";
+import { fetchWeatherAsync, fetchFlickrPhoto, toggleLoader } from "./index";
+import { getCountryCode } from "./countryCode";
 // search button and array of divs with data
 let button = document.querySelector("#citySearchButton");
 export let dataDivs = [...document.querySelectorAll(".data")];

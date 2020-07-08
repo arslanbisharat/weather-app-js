@@ -17,10 +17,10 @@ import {
   hero,
   heroImgContainer,
   dataDivs,
-} from "./DOMelements.js";
+} from "./DOMelements";
 //import { colors } from "./colors.js";
-import { getCountryName } from "./countryCode.js";
-import menuControl from "./menuControl.js";
+import { getCountryName } from "./countryCode";
+import menuControl from "./menuControl";
 
 // add functionality to menu
 menuControl("close", "menu", "menu-overlay");
