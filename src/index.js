@@ -28,7 +28,7 @@ menuControl(close, menu, menu-overlay);
 // add initial data upon site load
 // fetches the weather data
 window.onload = () => {
-  fetchWeatherAsync(Cape Town, ZA, metric);
+  fetchWeatherAsync(Lahore, PK, metric);
   toggleLoader();
 };
 
