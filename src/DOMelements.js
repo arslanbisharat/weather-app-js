@@ -56,7 +56,7 @@ unitsButtons.forEach((input) =>
 function switchUnits(e) {
   const searchQuery = document.querySelector('#cityNameInput').value;
   const units = e.target.value;
-  const resetData;
+  const reset = resetData();
   if (searchQuery !== '') {
     resetData(dataDivs);
     fetchWeatherAsync(searchQuery, units);
