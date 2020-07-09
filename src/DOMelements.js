@@ -1,5 +1,5 @@
-import { fetchWeatherAsync, fetchFlickrPhoto, toggleLoader } from './index.js';
-import { getCountryCode } from './countryCode.js';
+import { fetchWeatherAsync, fetchFlickrPhoto, toggleLoader } from './index';
+import { getCountryCode } from './countryCode';
 // search button and array of divs with data
 const button = document.querySelector('#citySearchButton');
 export const dataDivs = [...document.querySelectorAll('.data')];
@@ -15,9 +15,7 @@ button.addEventListener('click', () => {
   const countryCode = getCountryCode(nameOfCountry);
   const query = `${nameOfCity},${countryCode}`;
 
-  
-
-  //clear search
+  // clear search
   document.querySelector('#cityNameInput').value = '';
   // fetches the weather data
   fetchWeatherAsync(query, units);
