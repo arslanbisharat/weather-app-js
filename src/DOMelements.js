@@ -50,7 +50,7 @@ const units = getUnit();
 
 // adds click listeners to the units buttons
 unitsButtons.forEach((input) =>
-  input.addEventListener('click', () => switchUnits(event)),);
+  input.addEventListener('click', () => switchUnits()),);
 
 // this should be refactored to do maths on the unit data as opposed to fetching new data
 function switchUnits(e) {
