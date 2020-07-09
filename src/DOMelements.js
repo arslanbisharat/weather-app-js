@@ -22,12 +22,12 @@ button.addEventListener('click', () => {
   // fetches the city photo
   fetchFlickrPhoto(nameOfCity);
   
-function menuToggle(menuID) {
-  const menu = document.querySelector(`#${menuID}`);
-  menu.classList.toggle('visible');
-  menu.classList.toggle('hidden');
-}
-  menuToggle('menu-overlay');
+  function menuToggle(menuID) {
+    const menu = document.querySelector(`#${menuID}`);
+    menu.classList.toggle('visible');
+    menu.classList.toggle('hidden');
+  }
+    menuToggle('menu-overlay');
 });
 
 // celcius
