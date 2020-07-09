@@ -15,7 +15,7 @@ button.addEventListener('click', () => {
   const countryCode = getCountryCode(nameOfCountry);
   const query = `${nameOfCity},${countryCode}`;
 
-  const units = getUnit();
+  
 
   //clear search
   document.querySelector('#cityNameInput').value = '';
@@ -23,6 +23,12 @@ button.addEventListener('click', () => {
   fetchWeatherAsync(query, units);
   // fetches the city photo
   fetchFlickrPhoto(nameOfCity);
+  
+function menuToggle(menuID) {
+  const menu = document.querySelector(`#${menuID}`);
+  menu.classList.toggle('visible');
+  menu.classList.toggle('hidden');
+}
   menuToggle('menu-overlay');
 });
 
@@ -40,6 +46,7 @@ function getUnit() {
   })[0].value;
   return units;
 }
+const units = getUnit();
 
 // adds click listeners to the units buttons
 unitsButtons.forEach((input) =>
@@ -57,11 +64,6 @@ function switchUnits(e) {
   }
 }
 
-function menuToggle(menuID) {
-  const menu = document.querySelector(`#${menuID}`);
-  menu.classList.toggle('visible');
-  menu.classList.toggle('hidden');
-}
 
 export const name = document.querySelector('.cityName');
 export const country = document.querySelector('.country');
