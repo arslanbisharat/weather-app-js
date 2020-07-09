@@ -49,14 +49,14 @@ function getUnit() {
 const units = getUnit();
 
 // adds click listeners to the units buttons
+function switchUnits(e) {
+  const searchQuery = document.querySelector('#cityNameInput').value;
 unitsButtons.forEach((input) =>
   input.addEventListener('click', () => switchUnits()),);
 
 // this should be refactored to do maths on the unit data as opposed to fetching new data
-function switchUnits(e) {
-  const searchQuery = document.querySelector('#cityNameInput').value;
+
   const units = e.target.value;
-  const reset = resetData();
   if (searchQuery !== '') {
     resetData(dataDivs);
     fetchWeatherAsync(searchQuery, units);
