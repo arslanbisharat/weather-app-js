@@ -255,10 +255,9 @@ export function getCountryName(countryCode) {
 
 export function getCountryCode(countryName) {
   try {
-    let keys = Object.keys(isoCountries);
-    let key = keys.find((k) => isoCountries[k] == countryName);
+    const keys = Object.keys(isoCountries);
+    const key = keys.find((k) => isoCountries[k] === countryName);
     return key;
   } catch (error) {
-    console.log(error);
-  }
+}
 }
