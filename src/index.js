@@ -4,11 +4,11 @@ import {
   date,
   descr,
   icon,
-  // weathName,
-  // feelsLike,
+  //weathName,
+  //feelsLike,
   humid,
   wind,
-  // press,
+  //press,
   temp,
   tempMax,
   tempMin,
@@ -18,7 +18,7 @@ import {
   heroImgContainer,
   dataDivs,
 } from './DOMelements';
-// import { colors } from './colors.js';
+//import { colors } from './colors.js';
 import { getCountryName } from './countryCode';
 import menuControl from './menuControl';
 
@@ -41,7 +41,7 @@ export async function fetchFlickrPhoto(cityName) {
       {
         mode: 'cors',
         method: 'POST',
-        // stringify takes a JS object and transforms it into a json string
+        //stringify takes a JS object and transforms it into a json string
         body: JSON.stringify(cityData),
       }
     );
@@ -72,7 +72,7 @@ function placeholderBackground() {
 
 // async/await weather fetch
 
-//  fetchFlickrPhoto('cape town');
+//fetchFlickrPhoto('cape town');
 
 export async function fetchWeatherAsync(queryName, units) {
   // returns a resolved promise and sets it to response
@@ -85,7 +85,7 @@ export async function fetchWeatherAsync(queryName, units) {
     'https://cloudfare-weather810.reythedev.workers.dev',
     {
       method: 'POST',
-      // stringify takes a JS object and transforms it into a json string
+      //stringify takes a JS object and transforms it into a json string
       body: JSON.stringify(weatherRequest),
     }
   );
@@ -132,7 +132,7 @@ function destructureData(response) {
 
   let weatherSummary = { weatherDate, description, weatherIcon, weatherName };
   console.log('weather summary', weatherSummary);
-  // destructure response data into temp variables
+  //destructure response data into temp variables
   let {
     feels_like,
     humidity,
@@ -186,13 +186,13 @@ function populateDOM(weatherObjects) {
 
   let darkIcon = darkenIcon(weatherSummary.weatherIcon);
   icon.src = `http://openweathermap.org/img/wn/${darkIcon}.png`;
-  // weathName.innerHTML = weatherSummary.weatherName;
+  //weathName.innerHTML = weatherSummary.weatherName;
 
   // temperature readings
-  // .innerHTML = tempObj.feels_like;
+  //.innerHTML = tempObj.feels_like;
   humid.innerHTML = `${tempObj.humidity} %`;
   wind.innerHTML = `${Math.floor(tempObj.wind)} km/h`;
-  // press.innerHTML = tempObj.pressure;
+  //press.innerHTML = tempObj.pressure;
   temp.innerHTML = `${Math.floor(tempObj.temp)}&deg;`;
   tempMax.innerHTML = `${Math.floor(tempObj.temp_max)}&deg;`;
   tempMin.innerHTML = `${Math.floor(tempObj.temp_min)}&deg;`;
@@ -267,7 +267,7 @@ export function toggleLoader() {
 }
 
 // returns a fulfilled promise with either a value of a responseDetails object or Error
-// fetchWeatherAsync();
+//fetchWeatherAsync();
 
 // PLACES AUTOCOMPLETE
 export let placesAutocomplete = places({
