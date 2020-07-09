@@ -14,7 +14,13 @@ button.addEventListener('click', () => {
   const nameOfCountry = infoArray[infoArray.length - 1].replace(' ', ' ');
   const countryCode = getCountryCode(nameOfCountry);
   const query = `${nameOfCity},${countryCode}`;
-
+  
+  function menuToggle(menuID) {
+    const menu = document.querySelector(`#${menuID}`);
+    menu.classList.toggle('visible');
+    menu.classList.toggle('hidden');
+  }
+  
   // clear search
   document.querySelector('#cityNameInput').value = '';
   // fetches the weather data
@@ -54,11 +60,6 @@ function switchUnits(e) {
   }
 }
 
-function menuToggle(menuID) {
-  const menu = document.querySelector(`#${menuID}`);
-  menu.classList.toggle('visible');
-  menu.classList.toggle('hidden');
-}
 
 export const name = document.querySelector('.cityName');
 export const country = document.querySelector('.country');
