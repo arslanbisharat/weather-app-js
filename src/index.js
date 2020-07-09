@@ -17,18 +17,18 @@ import {
   hero,
   heroImgContainer,
   dataDivs,
-} from "./DOMelements";
-//import { colors } from "./colors.js";
-import { getCountryName } from "./countryCode";
-import menuControl from "./menuControl";
+} from ./DOMelements;
+//import { colors } from ./colors.js;
+import { getCountryName } from ./countryCode;
+import menuControl from ./menuControl;
 
 // add functionality to menu
-menuControl("close", "menu", "menu-overlay");
+menuControl(close, menu, menu-overlay);
 
 // add initial data upon site load
 // fetches the weather data
 window.onload = () => {
-  fetchWeatherAsync("Cape Town, ZA", "metric");
+  fetchWeatherAsync(Cape Town, ZA, metric);
   toggleLoader();
 };
 
@@ -37,25 +37,25 @@ export async function fetchFlickrPhoto(cityName) {
     // the js object containing the city name
     const cityData = { cityName: `${cityName}` };
     const responseData = await fetch(
-      "https://cloudfare-flickr810.reythedev.workers.dev",
+      https://cloudfare-flickr810.reythedev.workers.dev,
       {
-        mode: "cors",
-        method: "POST",
+        mode: cors,
+        method: POST,
         //stringify takes a JS object and transforms it into a json string
         body: JSON.stringify(cityData),
       }
     );
-    console.log("flickr-response", responseData);
+    console.log(flickr-response, responseData);
     const jsonData = await responseData.json();
-    console.log("JSON photo data", jsonData);
-    if (responseData.ok == true && jsonData.stat != "fail") {
+    console.log(JSON photo data, jsonData);
+    if (responseData.ok == true && jsonData.stat != fail) {
       const imageURL = formatURL(jsonData);
       setBackgroundImage(imageURL);
     } else {
       throw new Error(responseDetails.message);
     }
   } catch (error) {
-    console.log("Image fetch error", error);
+    console.log(Image fetch error, error);
     placeholderBackground();
   }
 }
@@ -65,14 +65,14 @@ function randomNumber(length) {
 }
 
 function placeholderBackground() {
-  console.log("Photo not found so here is a placeholder");
+  console.log(Photo not found so here is a placeholder);
   heroImgContainer.style.backgroundImage = `url(./Images/placeholder.jpg)`;
   toggleLoader();
 }
 
 // async/await weather fetch
 
-//fetchFlickrPhoto("cape town");
+//fetchFlickrPhoto(cape town);
 
 export async function fetchWeatherAsync(queryName, units) {
   // returns a resolved promise and sets it to response
@@ -82,9 +82,9 @@ export async function fetchWeatherAsync(queryName, units) {
   };
 
   const response = await fetch(
-    "https://cloudfare-weather810.reythedev.workers.dev",
+    https://cloudfare-weather810.reythedev.workers.dev,
     {
-      method: "POST",
+      method: POST,
       //stringify takes a JS object and transforms it into a json string
       body: JSON.stringify(weatherRequest),
     }
@@ -131,7 +131,7 @@ function destructureData(response) {
   } = response.weather[0];
 
   let weatherSummary = { weatherDate, description, weatherIcon, weatherName };
-  console.log("weather summary", weatherSummary);
+  console.log(weather summary, weatherSummary);
   //destructure response data into temp variables
   let {
     feels_like,
@@ -203,43 +203,43 @@ function populateDOM(weatherObjects) {
 }
 
 function handleError(err) {
-  alert("City not found");
+  alert(City not found);
 }
 
 function darkenIcon(iconCode) {
   const icon = iconCode;
-  const darkenedIcon = icon.replace("d", "n");
+  const darkenedIcon = icon.replace(d, n);
   return darkenedIcon;
 }
 
 export function resetData(htmlDivs) {
-  htmlDivs.map((div) => (div.innerHTML = ""));
+  htmlDivs.map((div) => (div.innerHTML = ));
 }
 
 function formatDate(unixDate) {
   const milliseconds = unixDate * 1000;
   const newDate = new Date(milliseconds);
   const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    weekday: long,
+    year: numeric,
+    month: long,
+    day: numeric,
   };
 
-  const finalDate = newDate.toLocaleDateString("en-za", options);
+  const finalDate = newDate.toLocaleDateString(en-za, options);
   return finalDate;
 }
 
 function formatTime(sunriseUnix, sunsetUnix) {
-  const options = { hour: "numeric", minute: "numeric" };
+  const options = { hour: numeric, minute: numeric };
 
   const sunriseMilliseconds = sunriseUnix * 1000;
   const sunriseTime = new Date(sunriseMilliseconds);
-  const sunrise = sunriseTime.toLocaleTimeString("en-za", options);
+  const sunrise = sunriseTime.toLocaleTimeString(en-za, options);
 
   const sunsetMilliseconds = sunsetUnix * 1000;
   const sunsetTime = new Date(sunsetMilliseconds);
-  const sunset = sunsetTime.toLocaleTimeString("en-za", options);
+  const sunset = sunsetTime.toLocaleTimeString(en-za, options);
   return { sunrise, sunset };
 }
 
@@ -247,7 +247,7 @@ function formatURL(jsonData) {
   const photoArrayLength = jsonData.photos.photo.length;
   const photoData = jsonData.photos.photo[randomNumber(photoArrayLength)];
   const imageUrl = `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_c.jpg`;
-  console.log("image url", imageUrl);
+  console.log(image url, imageUrl);
   return imageUrl;
 }
 
@@ -257,13 +257,13 @@ function setBackgroundImage(url) {
   img.onload = function () {
     toggleLoader();
   };
-  heroImgContainer.style.backgroundImage = "none";
+  heroImgContainer.style.backgroundImage = none;
   heroImgContainer.style.backgroundImage = `url(${img.src}`;
 }
 
 export function toggleLoader() {
   const body = document.body;
-  body.classList.toggle("loaded");
+  body.classList.toggle(loaded);
 }
 
 // returns a fulfilled promise with either a value of a responseDetails object or Error
@@ -271,7 +271,7 @@ export function toggleLoader() {
 
 // PLACES AUTOCOMPLETE
 export let placesAutocomplete = places({
-  appId: "plD80CGT2YTX",
-  apiKey: "b7ceba1bc9a11872d4a8202f6c3b9698",
-  container: document.querySelector("#cityNameInput"),
-}).configure({ type: "city" });
+  appId: plD80CGT2YTX,
+  apiKey: b7ceba1bc9a11872d4a8202f6c3b9698,
+  container: document.querySelector(#cityNameInput),
+}).configure({ type: city });
