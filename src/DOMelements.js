@@ -3,7 +3,7 @@ import { getCountryCode } from './countryCode';
 // search button and array of divs with data
 const button = document.querySelector('#citySearchButton');
 export const dataDivs = [...document.querySelectorAll('.data')];
-const units = getUnit();
+
 // adds search button event handler
 button.addEventListener('click', () => {
   toggleLoader();
@@ -29,6 +29,7 @@ const metricButton = document.querySelector('.metric');
 // fahrenheit
 const imperialButton = document.querySelector('.imperial');
 const unitsButtons = [metricButton, imperialButton];
+const units = getUnit();
 const getUnit = () => {
   const units = unitsButtons.filter((input) => {
     if (input.checked) {
