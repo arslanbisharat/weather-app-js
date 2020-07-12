@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700
+    rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/31038529b5.js" crossorigin="anonymous" defer></script>
+    <script type="module" src="../src/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2" async></script>
+  </head>
+  <body class="no-overflow-x">
+
+<div id='loader-wrapper'>
+    <div id='loader'>
+        <h1 class='loaderText'>loading<span class='loaderPeriod'>.</span></h1>
+    </div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+    
+  <!--MENU-->
+  <section id="menu-overlay" class="hidden">
+      <h1 id="menu-header">Menu</h1>
+      <div id="close" class='hover-effect'>
+        <i class="far fa-times-circle"></i>
+      </div>
+
+      <div id="menu-options" class="stack-children flex-space-even">
+        <div class="citySearchContainer stack-children">        
+          <input type="search" id="cityNameInput" class= "input-lrg" placeholder="Cape Town"></input>
+          <button id="citySearchButton" class='margin-top-bottom btn-shadow'>GET WEATHER</button>
+        </div>
+        <div class="unitsSwitchContainer margin-top-bottom-x2">
+          <input id="toggle-on" class="toggle toggle-left metric" name="toggle" value="metric" type="radio" checked>
+          <label for="toggle-on" class="btn">&deg;C</label>
+          <input id="toggle-off" class="toggle toggle-right imperial" name="toggle" value="imperial" type="radio">
+          <label for="toggle-off" class="btn">&deg;F</label>
+        </div>
+      </div>
+
+      <div id="menu-social">
+        <a href="https://twitter.com/arslan_bisharat"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/arslanbisharat/Weather-App-js"><i class="fab fa-github"></i></a>
+        <a href="https://www.arslanbisharat.tech"><i class="fa fa-globe"></i></a>
+        <a href="https://www.linkiden.com/arslan-bisharat"><i class="fab fa-linkiden"></i></a>
+      </div>
+
+      <div id="made-by" class="made-by-container center italic-font">
+        <div class="made-by center-row">
+          <i class="fas fa-code"></i>&nbsp; by &nbsp;
+          <a class="no-decoration" href="https://twitter.com/arslan_bisharat"> @arslan_bisharat</a>
+        </div>
+      </div>
+    </section> 
+
+    <section class="hero-container">
+      <div class="hero-img-container center">
+      </div>
+      <div class="summary margin-top-x3">
+        <header>
+          <div class="location center-row margin-top-x3 main-color upcase">
+            <h4 class="cityName data no-margin">Lahore</h4>
+            <h4 class="country data no-margin light-font">Pakistan</h4>
+          </div>
+          <h5 class="weatherDate data margin-top center light-font sec-color">Tuesday, 7 July</h5>
+        </header>
+        <div class="date">
+        </div>
+        <div class="big-temp-display center margin-left-x2">
+          <div class="temp data text-xxlrg main-color xtra-light-font">40&deg;</div>
+        </div>
+
+        <div class="summary-details stack-children center-vertical margin-left">
+          <div class="description-container grid-col-2">
+            <img src="http://openweathermap.org/img/wn/01n.png" alt="Weather Image" class="weather-icon center-row image-white-filter-shadow" height="25px" width="25px"><h4 class="description data no-margin center-left sec-color light-font">Sunny</h4>
+          </div>
+          <div class="wind-container margin-top grid-col-2">
+            <i class="fas fa-wind icon"></i><h4 class="wind data  no-margin center-left sec-color light-font" >4 km/h</h4>
+          </div>
+          <div class="humidity-container margin-top grid-col-2">
+            <i class="fas fa-tint icon"></i><h4 class="humidity data no-margin center-left sec-color light-font">50%</h4>
+          </div>
+        </div>
+        
+      </div>
+
+      
+    </section>
+
+    <section class="footer-container">
+      <div class="footer-info-container margin-sides-x2 sec-dark-color center">
+        <div class="footer-item center column no-margin-bottom">
+          <!--<img src="./Images/sunrise.png" alt="Sunrise Icon" class="icon" height="30px" width="30px">-->
+          <i class="sec-color round day-color far fa-sun"></i>
+          <!--<h6 class="title margin-top-x1-25 sec-dark-color ">Sunrise</h6>-->
+          <h5 class="no-margin-bottom margin-top-x2 sunrise data dark-color medium-font text-normal">2134</h5>
+        </div>
+        <div class="footer-item center column no-margin-bottom">
+          <!--<img src="./Images/sunset.png" alt="Sunset icon" class="icon" height="30px" width="30px"> -->
+          <i class="sec-color round night-color far fa-moon"></i>
+          <!--<h6 class="title margin-top-x1-25 sec-dark-color ">Sunset</h6>-->
+          <h5 class="no-margin-bottom margin-top-x2 sunset data dark-color medium-font text-normal">2134</h5>
+        </div>
+        <div class="footer-item center column no-margin-bottom">
+          <!--<img src="./Images/high.png" alt="Temp. icon" class="icon temp-icon" height="30px" width="30px"> -->
+          <i class="sec-color hot-color round em-width center-text fas fa-thermometer-full"></i>
+          <!--<h6 class="title margin-top-x1-25 temp-title sec-dark-color">Max.</h6>-->
+          <h5 class="no-margin-bottom margin-top-x2 temp_max data dark-color medium-font text-normal">2134</h5>
+        </div>
+        <div class="footer-item center column no-margin-bottom">
+          <!--<img src="./Images/low.png" alt="Temp. icon" class="icon temp-icon" height="30px" width="30px">-->
+          <i class="sec-color cold-color round em-width center-text fas fa-thermometer-empty"></i> 
+          <!--<h6 class="title margin-top-x1-25 temp-title sec-dark-color">Min.</h6>-->
+          <h5 class="no-margin-bottom margin-top-x2 temp_min data dark-color medium-font text-normal">2134</h5>
+        </div>
+      </div>
+      <button id="menu" class="menu mobile margin-bottom-x2 auto-margin-sides margin-top btn-shadow">SEARCH</button>
+    </section>
+
+<!--Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
+    
+    
+  </body>
+</html>
