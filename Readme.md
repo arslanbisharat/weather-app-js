@@ -7,7 +7,7 @@ This is the 5th project of the Main Javascript curriculum at [Microverse](https:
 
 #### [Assignment link](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
 
-![screenshot](sc.png)
+![screenshot](Capture.PNG)
 
 
 ## What?
