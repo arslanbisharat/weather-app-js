@@ -2,7 +2,7 @@
 
 This is the 5th project of the Main Javascript curriculum at [Microverse](https://www.microverse.org/) - @microverseinc
 
-* The objective is to build a page with interactivity using everything learn about **Objects**, **Factory Functions**, The **Module Pattern**
+* The objective is to build a page with interactivity using everything learns about **Objects**, **Factory Functions**, The **Module Pattern**
 * The project was completed using Javascript language.
 
 #### [Assignment link](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
@@ -16,8 +16,7 @@ This is the 5th project of the Main Javascript curriculum at [Microverse](https:
 * Photos are fetched from [flickr](flickr.com) depending on the city whose weather you're interested in.
 
 ## Why?
-* This project was a way for me to practice the async/await feature of Javascript 
-and a chance to build another small project from start to finish without the use of tutorials.
+* This project was a way for me to practice the async/await feature of Javascript and a chance to build another small project from start to finish without the use of tutorials.
 * It forms part of [The Odin Project's](theodinproject.com) curriculum. 
 
 ### Notes
@@ -33,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things do you need to install the software and how to install them
 ```
 node
 ```
@@ -67,7 +66,7 @@ Open the index.html file in your browser
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/arslanbisharat/weather-app-js/issues).
 
